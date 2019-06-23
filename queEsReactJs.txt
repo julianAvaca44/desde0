@@ -1,0 +1,31 @@
+Que es React? Porque React?
+React js es una librería Javascript creada ya hace un tiempo por Facebook, para construir interfaces de usuario, que te permitan crear aplicaciones SPA(single page application) más eficientes y funciona tanto en el lado cliente como en el servidor, haciendo posible la creación de aplicaciones isomórficas.
+
+React (también llamada React.js o ReactJS) es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. Es mantenido por Facebook y la comunidad de software libre, han participado en el proyecto más de mil desarrolladores diferentes.
+
+React es simplemente una librería Javascript para
+construir interfaces de usuario (UI), desarrollada y
+mantenida por Facebook, pero Open Source.
+Cuenta con una gran comunidad de desarrolladores.
+React está basado en el desarrollo de componentes,
+pequeños bloques que se pueden componer para
+poder lograr interfaces de usuario más complejas. 
+
+React es un biblioteca de Javascript de codigo abierto, para construir interfaces de usuario(UI) con el objetivo de facilitar el desarrollo de aplicaciones SPA(single page application) mas eficientes. Funciona tanto en el lado del cliente como en el servidor, haciendo posible la creación de aplicaciones isomórficas.
+
+que lo hace tan robusto
+Cuenta con una gran comunidad de desarrolladores
+Creada y mantenida por Facebook y la comunidad de software libre, han participado en el proyecto más de mil desarrolladores diferentes.
+
+biblioteca de Javascript open Source.
+funciona tanto del lado del cliente como en el servidor
+trae el concepto de virtual DOM: permite un renderizado mucho mas eficiente y rapido
+es Declarativo
+está basado en componentes
+reutilización codigo
+Se puede agregar a aplicaciones existentes de forma sencilla.
+● Creada por Facebook, y utilizada en sus propios productos.
+● Tiene un gran ecosistema, que brinda muchas bibliotecas y frameworks auxiliares
+● Grandes jugadores la utilizan, y aportan a la comunidad y el ecosistema: Airbnb, Netflix, Apple, Instagram, Paypal, etc.
+● Permite la creación de aplicaciones complejas, con UIs dinámicas
+JSX: html y Javascript juntos
