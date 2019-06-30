@@ -10,7 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 const drawerWidth = 240;
 const useStyles = {
   drawer: {
-    '@media (min-width: 800px)': {
+    '@media (min-width: 960px)': {
       width: `${drawerWidth}px`,
       flexShrink: 0
     },
@@ -27,7 +27,6 @@ const drawer = (
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
-            {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -36,7 +35,6 @@ const drawer = (
       <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem button key={text}>
-            {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -46,39 +44,33 @@ const drawer = (
 
 class MenuCmp extends Component {
     constructor(props){
-        super(props);
-        //this.classes = useStyles();
+        super(props);    
         this.container = this.props.container;
-        // this.handleDrawerToggle = this.handleDrawerToggle.bind(this);
-        // const [mobileOpen, setMobileOpen] = React.useState(false);
     }
 
     render(){
         return (
             <nav className={this.props.classes.drawer}>
-                    <Hidden smUp implementation="css">
+                    <Hidden mdUp implementation="css">
                         <Drawer
                             container={this.container}
                             variant="temporary"
                             anchor={'left'}
-                            open={false}
-                            classes={{
-                                paper: this.props.classes.drawerPaper,
-                              }}
-                            // onClose={handleDrawerToggle}
-                            ModalProps={{keepMounted: true // Better open performance on mobile.
-                            }}>
+                            open={this.props.menuOpen}
+                            onClose={this.props.menuOpenHandle}
+                            classes={{paper: this.props.classes.drawerPaper}}
+                            ModalProps={{keepMounted: true}}>
                             {drawer}
                         </Drawer>
                     </Hidden>
-                    <Hidden xsDown implementation="css">
+                    <Hidden smDown implementation="css">
                         <Drawer
                             variant="permanent"
                             classes={{
                                 paper: this.props.classes.drawerPaper,
                               }}
                             open>
-                            {drawer}>
+                            {drawer}
                         </Drawer>
                     </Hidden>
                 </nav>

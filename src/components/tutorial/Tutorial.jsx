@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
-import MenuCmp from './menuuu';
+import MenuCmp from './menu';
 import { withStyles } from '@material-ui/core/styles';
 
 const useStyles = {
@@ -12,35 +12,30 @@ const useStyles = {
   },
 };
 
-class TutorialCmp extends Component {    
-
+class TutorialCmp extends Component { 
     render() {
         return (
             <div className={this.props.classes.root}>
-                <MenuCmp></MenuCmp>
+                <MenuCmp menuOpen={this.props.menuOpen} menuOpenHanlde={this.props.menuOpenHanlde}></MenuCmp>
                 <main className={this.props.classes.content}>
-                    <Typography paragraph>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-                        facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-                        gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-                        donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                        adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-                        Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-                        imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-                        arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-                        donec massa sapien faucibus et molestie ac.
+                    <Typography variant="h3">
+                        Arranquemos "D0"
                     </Typography>
                     <Typography paragraph>
-                        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-                        facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-                        tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-                        consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-                        vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-                        hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-                        tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-                        nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-                        accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
+                        Primero lo primero, en tutorial iremos aprendiendo los conecptos basicos hasta llegar a los mas avanzados y sumando herramientas de desarrollo para complementar la informacion como el caso de Redux.
+                        Ire dando ejemplos de uso basico y entretenidos. 
+                    </Typography>
+                    <Typography variant="h3">
+                        Que necesito saber?
+                    </Typography>
+                    <Typography paragraph>
+                        Para poder entender de reactJs lo primero que necesitamos es tener una base de HTML, CSS, y JavaScript.
+                    </Typography>
+                    <Typography variant="h3">
+                        Que necesito para desarrollar?
+                    </Typography>
+                    <Typography paragraph>
+                        Bien para comenzar a desarrollar habra que tener instalado algun editor de texto o ide, ya sea sublime, atom, webStorm, o visual studio code. yo por mi parte estoy desarrollando con el visual Studio code pero ustedes pueden usar el mas comodo les parezca.
                     </Typography>
                 </main>
             </div>
