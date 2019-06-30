@@ -1,30 +1,24 @@
 import React, { Component } from 'react';
-import IntroCmp from './areas/intro';
-import AboutMeCmp from './areas/aboutMe';
-import DescriptionCmp from './areas/description';
-import WhatIsReactJsCmp from './areas/whatIsReactJs';
-import Divider from '@material-ui/core/Divider';
+import ReactIntroCmp from '../reactIntro/ReactIntro';
+import TutorialCmp from '../tutorial/Tutorial';
 import { withStyles } from '@material-ui/core/styles';
-
+import HeaderCmp from '../header/header';
+import FooterCmp from '../footer/footer';
 import styles from './bodyStyles';
+import { Route } from "react-router-dom";
+   
 import './body.scss';
 
-class BodyCmp extends Component {
-    constructor(props){
-        super(props);
-        this.state = { texto : 'Mundo'};
-    }
 
+class BodyCmp extends Component {
     render(){
         return (
-        <main className='body-cmp'>
-            <IntroCmp {...this.props}></IntroCmp>
-            <WhatIsReactJsCmp {...this.props}></WhatIsReactJsCmp>
-            <Divider className={this.props.classes.divider} variant='middle'/>
-            <DescriptionCmp {...this.props}></DescriptionCmp>
-            <Divider className={this.props.classes.divider} variant='middle'/>
-            <AboutMeCmp {...this.props}></AboutMeCmp>            
-        </main>    
+            [
+                <HeaderCmp/>,
+                <Route exact path={`${this.props.match.url}/tutorial`} render={() => <TutorialCmp {...this.props}/>}></Route>,
+                <Route exact path={`${this.props.match.url}`} render={() => <ReactIntroCmp {...this.props}/>}></Route>,
+                <FooterCmp/>
+            ]
         )
     }
 }

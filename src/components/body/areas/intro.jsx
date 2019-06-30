@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
+
 
 class IntroCmp extends Component {
     render(){
@@ -24,7 +26,9 @@ class IntroCmp extends Component {
                             </div>
                             <Divider className={this.props.classes.dividerFull} variant='middle'/> 
                             <div className='center-rjs'>
-                                <Button color="secondary" size="large" variant="contained">GET STARTED</Button>
+                                <Link to="reactjs/tutorial">
+                                    <Button color="secondary" size="large" variant="contained">GET STARTED</Button>
+                                </Link>
                             </div>
                         </Grid>    
                     </Grid>

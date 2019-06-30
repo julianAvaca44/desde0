@@ -1,0 +1,61 @@
+html, body, body > div[id=root], body > div[id=root] > div.App-cmp{
+    height: 100%;
+} 
+
+ 
+.notFound-cmp{
+    height: 100%;
+    background-color: #282c34;
+    color:white;
+
+    & > div{
+        height: 100%;
+        padding: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        max-width: 100%;
+    } 
+
+    & > div > div{
+        height: 70%;
+    }
+
+    & > div > div:last-child{
+        height: 30%;
+        background-color: #212121;
+    }
+
+    .MuiDivider-root{
+        background-color: #f50057d4;
+        margin: 0 auto;
+        width: 70%;
+    }
+    
+    .center-div{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        flex-direction: column;
+    }
+
+    .pantalla-contenido h1{
+        margin: 5px auto;
+    }
+
+    .pantalla-contenido button{
+        margin: 20px auto;
+        span{
+            padding: 0 4px;
+        }
+    }
+
+    div h1{
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-weight: 200;
+        letter-spacing: 0em; 
+        font-family: "Roboto";
+    }
+}
+

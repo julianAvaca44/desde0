@@ -1,21 +1,25 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import BodyCmp from './components/body/body';
+import NotFoundCmp from './components/notFound/notFound';
 import './App.css';
-import HeaderCmp from './components/header/header';
-import FooterCmp from './components/footer/footer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 class App extends React.Component{
   render(){
     return (
-      <React.Fragment>
-      <CssBaseline />
-        <div className='App-cmp'>
-          <HeaderCmp cabezera='Hola'/>
-          <BodyCmp/>
-          <FooterCmp name='Chau'/>
-        </div>
-      </React.Fragment>  
+      <BrowserRouter>
+        <React.Fragment>
+        <CssBaseline />
+          <div className='App-cmp'>
+            <Switch>
+              <Route strict path="/reactjs" component={BodyCmp} />
+              <Redirect exact from="/" to="/reactjs" />
+              <Route component={NotFoundCmp} />
+            </Switch>
+          </div>
+        </React.Fragment>  
+      </BrowserRouter>
     );
   }
 }
