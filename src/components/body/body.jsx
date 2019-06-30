@@ -27,7 +27,7 @@ class BodyCmp extends Component {
     render(){
         return (
             [
-                <HeaderCmp onClick={this.handleDrawerToggle}/>,
+                <HeaderCmp {...this.props} onClick={this.handleDrawerToggle} menuOpen={this.state.mobileOpen}/>,
                 <Route exact path={`${this.props.match.url}/tutorial`} render={() => <TutorialCmp {...this.props} menuOpen={this.state.mobileOpen} menuOpenHanlde={this.handleDrawerToggle}/>}></Route>,
                 <Route exact path={`${this.props.match.url}`} render={() => <ReactIntroCmp {...this.props}/>}></Route>,
                 <FooterCmp/>

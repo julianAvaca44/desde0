@@ -13,33 +13,42 @@ const styles = {
         display: 'flex',
     },
     toolbar: {
-        textAling: 'center',
         justifyContent: 'center'
     },
     appBar: {
-        marginLeft: drawerWidth,
         '@media (min-width: 960px)': {
+            marginLeft: drawerWidth,
             width: `calc(100% - ${drawerWidth}px)`,
         }
     },
     menuButton: {
-        marginRight: "30px",
+        '@media (max-width: 959px)': {
+            marginRight: "30px",
+            flex: "none"
+          },
         '@media (min-width: 960px)': {
-          display: 'none',
+          display: 'none'
         },
+    },
+    title: {
+        '@media (max-width: 959px)': {
+            flex: "auto"
+          }
     },
 }
 
 class HeaderCmp extends Component {
     render(){
+        let isPrincipal = this.props.location.pathname === '/reactjs' || this.props.location.pathname === '/reactjs/';
+        let classesAppBar = isPrincipal?'':this.props.classes.appBar;
+        let classesTitle = isPrincipal?'':this.props.classes.title;
+        let menu = isPrincipal?'':(<IconButton color="inherit" className={this.props.classes.menuButton} aria-label="Open drawer" edge="start" onClick={this.props.onClick}><MenuIcon /></IconButton>);
         return (
             <div className={this.props.classes.root + ' header-cmp'}>
-                <AppBar className={this.props.classes.appBar} position="fixed" color='secondary'>
-                    <Toolbar>
-                        <IconButton color="inherit"  className={this.props.classes.menuButton} aria-label="Open drawer" edge="start" onClick={this.props.onClick}>
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h5" noWrap>
+                <AppBar className={classesAppBar} position="fixed" color='secondary'>
+                    <Toolbar className={this.props.classes.toolbar}>
+                        {menu}
+                        <Typography variant="h5" className={classesTitle} noWrap>
                             ReactJS-0
                         </Typography>
                     </Toolbar>
